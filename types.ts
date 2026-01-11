@@ -20,7 +20,7 @@ export interface CheatsheetBlock {
   type: BlockType;
   content: ContentItem[] | string[];
   badge?: string; // e.g., "Eventual Consistency"
-  badgeColor?: 'yellow' | 'red' | 'blue' | 'green';
+  badgeColor?: 'yellow' | 'red' | 'blue' | 'green' | 'orange' | 'purple';
 }
 
 export type ZoneType = 'Edge' | 'Compute' | 'Data' | 'Async' | 'Observability';

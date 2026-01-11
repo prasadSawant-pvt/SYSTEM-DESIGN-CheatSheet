@@ -321,3 +321,121 @@ export const COLUMN_4_DATA: ColumnData = {
     }
   ]
 };
+
+export const COLUMN_5_DATA: ColumnData = {
+  id: 'col5',
+  title: '2. Service & Compute Patterns',
+  colorTheme: 'green',
+  blocks: [
+    {
+      title: 'Service Design Rules',
+      type: BlockType.KEY_VALUE,
+      badge: 'Core',
+      badgeColor: 'green',
+      content: [
+        { label: 'Service Scope', value: 'Single responsibility, Business capability based' },
+        { label: 'State', value: 'Stateless services, Externalize state' },
+        { label: 'API Style', value: 'REST (CRUD), gRPC (Low latency)' }
+      ]
+    },
+    {
+      title: 'Scaling Strategy',
+      type: BlockType.KEY_VALUE,
+      badge: 'Scale',
+      badgeColor: 'blue',
+      content: [
+        { label: 'When?', value: 'Traffic spikes, Uneven load' },
+        { label: 'Strategy', value: 'Horizontal scaling, Auto-scaling (HPA)' },
+        { label: 'Fix Overload', value: 'Rate limiting, Backpressure' }
+      ]
+    },
+    {
+      title: 'Inter-Service Communication',
+      type: BlockType.KEY_VALUE,
+      badge: 'Comm',
+      badgeColor: 'orange',
+      content: [
+        { label: 'Sync', value: 'REST / gRPC, Request–Response' },
+        { label: 'Async', value: 'Events / Queues, Decoupling' },
+        { label: 'When Async?', value: 'Slow tasks, Fan-out, Eventual consistency' }
+      ]
+    },
+    {
+      title: 'Resilience Patterns',
+      type: BlockType.KEY_VALUE,
+      badge: 'Resilience',
+      badgeColor: 'red',
+      content: [
+        { label: 'Timeouts', value: 'Always set, Fail fast' },
+        { label: 'Retries', value: 'Idempotent only, Bounded retries' },
+        { label: 'Circuit Breaker', value: 'Prevent cascades, Fast recovery' }
+      ]
+    },
+    {
+      title: 'Service Mesh Usage',
+      type: BlockType.KEY_VALUE,
+      badge: 'Mesh',
+      badgeColor: 'purple',
+      content: [
+        { label: 'Why?', value: 'Cross-cutting concerns, No code change' },
+        { label: 'Handles', value: 'mTLS, Retries, Traffic shaping' },
+        { label: 'Cost', value: 'Extra latency, CPU overhead' }
+      ]
+    },
+    {
+      title: 'Traffic Management',
+      type: BlockType.KEY_VALUE,
+      content: [
+        { label: 'Load Balancing', value: 'Round-robin, EWMA' },
+        { label: 'Deployment', value: 'Canary, Blue-Green' },
+        { label: 'Versioning', value: '/ v1 / v2, Header-based' }
+      ]
+    },
+    {
+      title: 'Consistency Handling',
+      type: BlockType.KEY_VALUE,
+      content: [
+        { label: 'Strong', value: 'Sync calls, Payments' },
+        { label: 'Eventual', value: 'Async flows, Notifications' },
+        { label: 'Session', value: 'Sticky read, Read-your-own-writes' }
+      ]
+    },
+    {
+      title: 'Configuration & Secrets',
+      type: BlockType.KEY_VALUE,
+      content: [
+        { label: 'Config', value: 'Externalized, Dynamic reload' },
+        { label: 'Secrets', value: 'Vault / KMS, Never in code' }
+      ]
+    },
+    {
+      title: 'Observability (Service-Level)',
+      type: BlockType.KEY_VALUE,
+      badge: 'Obs',
+      badgeColor: 'blue',
+      content: [
+        { label: 'Metrics', value: 'QPS, Latency, Error rate' },
+        { label: 'Logs', value: 'Structured, Trace ID' },
+        { label: 'Tracing', value: 'Service hops, Latency breakdown' }
+      ]
+    },
+    {
+      title: 'Failure Isolation',
+      type: BlockType.KEY_VALUE,
+      content: [
+        { label: 'Bulkheads', value: 'Separate pools, Limit blast radius' },
+        { label: 'SPOF Fix', value: 'Stateless compute, Multi-AZ' }
+      ]
+    },
+    {
+      title: 'Cost Awareness',
+      type: BlockType.KEY_VALUE,
+      badge: 'Cost',
+      badgeColor: 'yellow',
+      content: [
+        { label: 'Compute', value: 'Right-size pods, Auto-scale down' },
+        { label: 'Waste', value: 'Idle services, Over-provisioning' }
+      ]
+    }
+  ]
+};

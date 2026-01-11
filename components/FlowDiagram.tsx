@@ -4,6 +4,7 @@ import { ChevronRight, Activity, ArrowRight } from 'lucide-react';
 
 interface Props {
   steps: FlowStep[];
+  onZoneClick?: (zone: ZoneType) => void;
 }
 
 const zoneConfig: Record<ZoneType, { color: string; bg: string; border: string; text: string }> = {
@@ -14,7 +15,7 @@ const zoneConfig: Record<ZoneType, { color: string; bg: string; border: string; 
   Observability: { color: 'slate', bg: 'bg-slate-100/50', border: 'border-slate-300', text: 'text-slate-600' },
 };
 
-const FlowDiagram: React.FC<Props> = ({ steps }) => {
+const FlowDiagram: React.FC<Props> = ({ steps, onZoneClick }) => {
   // Group steps by Zone
   const zones: ZoneType[] = ['Edge', 'Compute', 'Data', 'Async', 'Observability'];
   
@@ -38,7 +39,8 @@ const FlowDiagram: React.FC<Props> = ({ steps }) => {
                   {/* Zone Container */}
                   <div className={`flex-1 rounded-lg border ${styles.border} ${styles.bg} p-2 flex flex-col relative`}>
                       {/* Zone Label */}
-                      <div className={`absolute -top-3 left-3 px-2 py-0.5 bg-white border ${styles.border} rounded-full text-[10px] font-bold uppercase tracking-wider ${styles.text} shadow-sm z-10`}>
+                      <div className={`absolute -top-3 left-3 px-2 py-0.5 bg-white border ${styles.border} rounded-full text-[10px] font-bold uppercase tracking-wider ${styles.text} shadow-sm z-10 cursor-pointer hover:opacity-80 transition-opacity`}
+                          onClick={() => onZoneClick?.(zone)}>
                           {zone} Layer
                       </div>
 
